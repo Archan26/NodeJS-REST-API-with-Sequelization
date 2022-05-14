@@ -1,0 +1,58 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlhZWiIsImlkIjoyLCJpYXQiOjE2NTI1MjY3OTEsImV4cCI6MTY1MjYxMzE5MX0.eaxo2uWGF_-a0KiOiiO5jLYWg_VQBuNKJozHo7a3HFg
+@baseURL=http://localhost:3000
+
+POST {{baseURL}}/users/signup
+Content-Type: application/json
+
+{
+    "username": "XYZ",
+    "password": "xyz123"
+}
+
+###
+POST {{baseURL}}/users/login
+Content-Type: application/json
+
+{
+    "username": "XYZ",
+    "password": "xyz123"
+}
+
+
+//Books APIs
+###
+POST {{baseURL}}/books/addBook
+token: {{token}}
+Content-Type: application/json
+
+{
+    "name": "Rich dad Poor dad",
+    "author": "XYZ",
+    "price": "200",
+    "description":"About money"
+}
+
+###
+GET {{baseURL}}/books/getBooks
+token: {{token}}
+
+###
+GET {{baseURL}}/books/book/2
+token: {{token}}
+
+###
+PUT {{baseURL}}/books/updateBook/2
+token: {{token}}
+Content-Type: application/json
+
+{
+   "name": "Alchemist",
+    "author": "Paulo Coelho",
+    "price": "200",
+    "description":"About 20's and 30's"
+}
+
+
+###
+DELETE {{baseURL}}/books/deleteBook/ 
+token: {{token}}

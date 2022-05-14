@@ -1,0 +1,36 @@
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFCQyIsImlkIjoxLCJpYXQiOjE2NTI1MjQxODAsImV4cCI6MTY1MjYxMDU4MH0.mcijXHAy6rtKCNYL0Yv1vcQ-xLUw31jNuM2lhVhumlg
+@baseURL=http://localhost:3000
+
+POST {{baseURL}}/books/addBook
+Content-Type: application/json
+
+{
+    "name": "New",
+    "author": "Ankur Warikoo",
+    "price": "200",
+    "description":"About 20's and 30's"
+}
+
+###
+GET {{baseURL}}/books/getBooks
+token: {{token}}
+
+###
+GET {{baseURL}}/books/book/6
+Content-Type: application/json
+
+###
+PUT {{baseURL}}/books/updateBook/7
+Content-Type: application/json
+
+{
+    "name": "Archan",
+    "author": "Ankur Warikoo",
+    "price": "200",
+    "description":"About 20's and 30's"
+}
+
+
+###
+DELETE {{baseURL}}/books/deleteBook/7
+Content-Type: application/json
